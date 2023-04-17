@@ -33,6 +33,7 @@ cd cs-598-dlh-team87
 
 12.Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
 
+13.Run `10-Summary.ipynb` to display results of each model.
 
 
 ## References
