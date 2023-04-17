@@ -1,0 +1,6 @@
+embeddings/fasttext.model
+embeddings/fasttext.model.wv.vectors_ngrams.npy
+embeddings/fasttext.model.trainables.vectors_ngrams_lockf.npy
+embeddings/word2vec.model
+
+
