@@ -1,6 +1,23 @@
-embeddings/fasttext.model
-embeddings/fasttext.model.wv.vectors_ngrams.npy
-embeddings/fasttext.model.trainables.vectors_ngrams_lockf.npy
-embeddings/word2vec.model
+.DS_Store
+.Trash-0/
+*.bundle.*
+lib/
+node_modules/
+*.egg-info/
+.ipynb_checkpoints
+*.tsbuildinfo
 
+# Created by https://www.gitignore.io/api/python
+# Edit at https://www.gitignore.io/?templates=python
 
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+results/*
+embeddings/*
+data/*
+*.whl
+tmpufnnj2ep/*
+*.hdf5
