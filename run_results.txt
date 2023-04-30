@@ -1,0 +1,30 @@
+adam_opt = Adam(lr=0.0006, decay=0.01)
+epoch = 70
+
+['word2vec', 'fasttext', 'concat','biobert']
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+
+[90.62504315376282, 90.62512803077698, 213.27144598960876, 144.49058961868286]
+[90.16234993934631, 128.89189052581787, 136.54620337486267, 128.9479479789734]
+[191.83519101142883, 121.55704140663147, 144.67096972465515, 175.59074759483337]
+[108.01440620422363, 138.69764494895935, 185.76743412017822, 115.37936615943909]
+final model training time: 2208.330319404602
+
+
+   embedding       model_category        prediction_task   auc_mean  auc_std   
+0    biobert  MultiModal Baseline           LOS > 3 Days  69.935795      NaN  \
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.357360      NaN   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.661145      NaN   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.515274      NaN   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.261181      NaN   
+5     concat  MultiModal Baseline           LOS > 7 Days  71.994382      NaN   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.250704      NaN   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.453516      NaN   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.801066      NaN   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.696715      NaN   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.569113      NaN   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  89.028940      NaN   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.274498      NaN   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.296727      NaN   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.096714      NaN   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  89.397926      NaN   
