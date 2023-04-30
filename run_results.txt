@@ -28,3 +28,38 @@ final model training time: 2208.330319404602
 13  word2vec  MultiModal Baseline           LOS > 7 Days  73.296727      NaN   
 14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.096714      NaN   
 15  word2vec  MultiModal Baseline       In-ICU Mortality  89.397926      NaN   
+
+====================================================================================
+
+adam_opt = Adam(lr=0.0004, decay=0.01)
+epoch = 70
+
+
+['word2vec', 'fasttext', 'concat','biobert']
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+
+
+[547.9467535018921, 90.75716710090637, 486.9697382450104, 440.65074014663696]
+[223.04528284072876, 230.93830609321594, 200.3311324119568, 549.8763809204102]
+[231.1606104373932, 177.03893566131592, 231.09381794929504, 191.76548385620117]
+[311.6573369503021, 241.04482197761536, 201.13317155838013, 269.8360421657562]
+final model training time: 4628.454314470291
+
+
+   embedding       model_category        prediction_task   auc_mean  auc_std   
+0    biobert  MultiModal Baseline           LOS > 3 Days  70.206006      NaN  \
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.315327      NaN   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.764698      NaN   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.342258      NaN   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.256999      NaN   
+5     concat  MultiModal Baseline           LOS > 7 Days  71.938291      NaN   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.546554      NaN   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.178299      NaN   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.579403      NaN   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.858556      NaN   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.909007      NaN   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  88.815714      NaN   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.229719      NaN   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.423388      NaN   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.532292      NaN   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  88.607486      NaN
