@@ -63,3 +63,37 @@ final model training time: 4628.454314470291
 13  word2vec  MultiModal Baseline           LOS > 7 Days  73.423388      NaN   
 14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.532292      NaN   
 15  word2vec  MultiModal Baseline       In-ICU Mortality  88.607486      NaN
+
+====================================================================================
+
+# this run was with two iterations
+adam_opt = Adam(lr=0.0006, decay=0.01)
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+embedding_types = ['word2vec', 'fasttext', 'concat','biobert']
+iter_num = 2
+num_epoch = 70
+
+   embedding       model_category        prediction_task   auc_mean   auc_std  \
+0    biobert  MultiModal Baseline           LOS > 3 Days  70.252325  0.187505   
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.643501  0.300611   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.739111  0.020846   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.328204  0.252963   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.189386  0.234536   
+5     concat  MultiModal Baseline           LOS > 7 Days  72.313796  0.198215   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.282125  0.080990   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.273395  0.296025   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.875026  0.193373   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.965633  0.147375   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.763158  0.153324   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  88.817783  0.102190   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.114266  0.125487   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.788927  0.042086   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.332235  0.021638   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  88.761842  0.029591 
+
+
+[154.21198153495789, 108.14102745056152, 131.40392804145813, 199.23999428749084, 153.30717134475708, 121.70263600349426, 159.22947239875793, 194.98438954353333]
+[106.10375833511353, 77.84544157981873, 112.21864557266235, 159.15052151679993, 78.17005109786987, 136.94606518745422, 121.70871949195862, 114.63378572463989]
+[100.16451692581177, 150.883043050766, 201.45986557006836, 158.65079617500305, 146.9994649887085, 110.6108648777008, 125.10123825073242, 197.18419122695923]
+[86.60719466209412, 102.06179594993591, 181.22611117362976, 152.58204054832458, 152.55921387672424, 145.80921125411987, 181.53472995758057, 138.50401306152344]
+final model training time: 4463.946449756622
