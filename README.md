@@ -1,10 +1,18 @@
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
 ## Prerequisites
-1. Setup your conda virtual environment with the following environment information: `environments.yaml`
+1. Setup your conda virtual environment with the following environment information:
 
-`conda env create --name envname --file=environments.yaml`
+    `environments.yaml`
 
+    `conda env create --name your_env_name_here --file=environments.yaml`
+
+1. If you are having issues installing any of the packages via the conda command above use the directory `package-installer-helpers` to aid in installing:
+    * _install-all.sh_ used to install dependencies manually without the `environments.yaml` file
+        * This file encompasses all of the commands from the below files
+    * _install-biobert-embedding.sh_ used to install biobert embedding model dependency
+    * _install-glove.sh_ used to install the glove dependency
+    * _install-pip-dependencies.sh_ used to install the pip dependencies
 
 ## Usage
 
