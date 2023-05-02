@@ -60,3 +60,4 @@ Download Pre-trained Word2Vec & FastText embeddings: https://github.com/kexinhua
 
 Preprocessing Script: https://github.com/kaggarwal/ClinicalNotesICU
 
+Biobert embedding repo: https://github.com/Overfitter/biobert_embedding
