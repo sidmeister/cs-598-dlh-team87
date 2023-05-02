@@ -1,7 +1,7 @@
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
 ## Prerequisites
-1. Setup your conda virtual environment with the following environment information: `environment.yaml`
+1. Setup your conda virtual environment with the following environment information: `environments.yaml`
 
 `conda env create --name envname --file=environments.yaml`
 
@@ -13,32 +13,32 @@
 https://github.com/sidmeister/cs-598-dlh-team87.git
 cd cs-598-dlh-team87
 ```
-1. Run MIMIC-Extract Pipeline as explained in https://github.com/MLforHealth/MIMIC_Extract.   
+2. Run MIMIC-Extract Pipeline as explained in https://github.com/MLforHealth/MIMIC_Extract.   
 
-1. Copy the output file of MIMIC-Extract Pipeline named `all_hourly_data.h5` to `data` folder.
+2. Copy the output file of MIMIC-Extract Pipeline named `all_hourly_data.h5` to `data` folder.
 
-1. Run `01-Extract-Timseries-Features.ipnyb` to extract first 24 hours timeseries features from MIMIC-Extract raw data.
+2. Run `01-Extract-Timseries-Features.ipnyb` to extract first 24 hours timeseries features from MIMIC-Extract raw data.
 
-1. Copy the `ADMISSIONS.csv`, `NOTEEVENTS.csv`, `ICUSTAYS.csv` files into `data` folder.
+2. Copy the `ADMISSIONS.csv`, `NOTEEVENTS.csv`, `ICUSTAYS.csv` files into `data` folder.
 
-1. Run `02-Select-SubClinicalNotes.ipynb` to select subnotes based on criteria from all MIMIC-III Notes.
+2. Run `02-Select-SubClinicalNotes.ipynb` to select subnotes based on criteria from all MIMIC-III Notes.
 
-1. Run `03-Prprocess-Clinical-Notes.ipnyb` to prepocessing notes.
+2. Run `03-Prprocess-Clinical-Notes.ipnyb` to prepocessing notes.
 
-1. Run `04-Apply-med7-on-Clinical-Notes.ipynb` to extract medical entities. 
+2. Run `04-Apply-med7-on-Clinical-Notes.ipynb` to extract medical entities. 
 
-1. Unzip embeddings.zip into `embeddings` folder 
+2. Unzip embeddings.zip into `embeddings` folder 
 
-1. Run `05-Represent-Entities-With-Different-Embeddings.ipynb` . This notebook will do the following things
+2. Run `05-Represent-Entities-With-Different-Embeddings.ipynb` . This notebook will do the following things
     a) To convert medical entities into word representations.
     b) Prepare the timeseries data to fed through GRU / LSTM.
     c) Run multimodal baseline to predict 4 different clinical tasks
 
-1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
+2. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
 
-1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
+2. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
 
-1. Run `10-Summary.ipynb` to display results of each model.
+2. Run `10-Summary.ipynb` to display results of each model.
 
 ## References
 
