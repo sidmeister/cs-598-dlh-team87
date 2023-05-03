@@ -1,7 +1,7 @@
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
 ## Prerequisites
-1. Setup your conda virtual environment with the following environment information:
+1. Setup your conda virtual environment with the following environment information (requires conda, jupyter, and others):
 
     `environments.yaml`
 
@@ -14,7 +14,11 @@
     * _install-glove.sh_ used to install the glove dependency
     * _install-pip-dependencies.sh_ used to install the pip dependencies
 
-## Usage
+
+
+## Training Code
+
+### Pre-requisites to start training code
 
 1. Clone the code to local.   
 ```
@@ -37,16 +41,33 @@ cd cs-598-dlh-team87
 
 2. Unzip embeddings.zip into `embeddings` folder 
 
-2. Run `05-Represent-Entities-With-Different-Embeddings.ipynb` . This notebook will do the following things
+### Actual Training Code
+
+### The below notebook files perform training and writing evaluative results to the hard drive. 
+
+1. Run `05-Represent-Entities-With-Different-Embeddings.ipynb` . This notebook will do the following things
     a) To convert medical entities into word representations.
     b) Prepare the timeseries data to fed through GRU / LSTM.
     c) Run multimodal baseline to predict 4 different clinical tasks
 
-2. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
+1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
 
-2. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
+1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
 
-2. Run `10-Summary.ipynb` to display results of each model.
+## Evaluation Code
+
+### The below notebook files perform training and writing evaluative results to the hard drive. However step 3 is critical to evaluate the results of the trained models.
+
+1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
+
+1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
+
+1. Run `10-Summary.ipynb` to display results of each model.
+
+
+## Pretrained Models
+
+`saved_dir_here` is the source for the models
 
 ## References
 
