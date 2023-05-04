@@ -164,3 +164,38 @@ GRU-256-mort_hosp: [36.6663384437561, 47.716737270355225, 36.61557579040527]
 GRU-256-mort_icu: [41.84048581123352, 36.50800275802612, 41.92862582206726]
 GRU-256-los_3: [41.95435690879822, 47.32824468612671, 42.39595866203308]
 GRU-256-los_7: [58.6218786239624, 41.98061442375183, 42.431241273880005]
+
+
+
+====================================================================================
+
+
+embedding_types = ['word2vec', 'fasttext', 'concat']
+embedding_dict = [ner_word2vec, ner_fasttext, ner_concat]
+batch_size = 64
+monitor_criteria = 'val_loss'
+
+
+filter_number = 32
+ner_representation_limit = 64
+activation_func = "relu"
+
+
+sequence_model = "GRU"
+sequence_hidden_unit = 256
+
+
+  embedding  model_category        prediction_task   auc_mean   auc_std   
+0    concat  Proposed Model  In-Hospital Mortality  87.427554  0.389840  \
+1  fasttext  Proposed Model  In-Hospital Mortality  86.944735  0.008346   
+2  word2vec  Proposed Model  In-Hospital Mortality  86.706454  1.142626   
+
+   auprc_mean  auprc_std    F1_mean    F1_std   acc_mean   acc_std  
+0   56.788665   1.175584  45.369955  0.523196  91.611655  0.177058  
+1   55.010137   0.143071  43.722400  0.091334  91.327111  0.032192  
+2   55.729753   0.524284  35.956730  5.358311  91.270203  0.144866  
+
+
+word2vec-mort_hosp: ['24.39140510559082', '23.986725330352783']
+fasttext-mort_hosp: ['23.338331699371338', '23.647236824035645']
+concat-mort_hosp: ['25.055757999420166', '25.087976932525635']
