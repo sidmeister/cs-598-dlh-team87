@@ -170,8 +170,8 @@ GRU-256-los_7: [58.6218786239624, 41.98061442375183, 42.431241273880005]
 ====================================================================================
 
 
-embedding_types = ['word2vec', 'fasttext', 'concat']
-embedding_dict = [ner_word2vec, ner_fasttext, ner_concat]
+embedding_types = ['word2vec', 'fasttext', 'concat', 'biobert']
+embedding_dict = [ner_word2vec, ner_fasttext, ner_concat,biobertvec ]
 batch_size = 64
 monitor_criteria = 'val_loss'
 
@@ -185,17 +185,60 @@ sequence_model = "GRU"
 sequence_hidden_unit = 256
 
 
-  embedding  model_category        prediction_task   auc_mean   auc_std   
-0    concat  Proposed Model  In-Hospital Mortality  87.427554  0.389840  \
-1  fasttext  Proposed Model  In-Hospital Mortality  86.944735  0.008346   
-2  word2vec  Proposed Model  In-Hospital Mortality  86.706454  1.142626   
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+num_epoch = 10
+model_patience = 5
+iterations = 1
 
-   auprc_mean  auprc_std    F1_mean    F1_std   acc_mean   acc_std  
-0   56.788665   1.175584  45.369955  0.523196  91.611655  0.177058  
-1   55.010137   0.143071  43.722400  0.091334  91.327111  0.032192  
-2   55.729753   0.524284  35.956730  5.358311  91.270203  0.144866  
+   embedding  model_category        prediction_task   auc_mean   auc_std   
+0    biobert  Proposed Model           LOS > 3 Days  70.966406       NaN  \
+1    biobert  Proposed Model           LOS > 7 Days  72.793931       NaN   
+2    biobert  Proposed Model  In-Hospital Mortality  87.663704  0.282382   
+3    biobert  Proposed Model       In-ICU Mortality  87.653400       NaN   
+4     concat  Proposed Model           LOS > 3 Days  70.492858       NaN   
+5     concat  Proposed Model           LOS > 7 Days  70.088110       NaN   
+6     concat  Proposed Model  In-Hospital Mortality  87.000145  0.648458   
+7     concat  Proposed Model       In-ICU Mortality  87.782888  0.763360   
+8   fasttext  Proposed Model           LOS > 3 Days  70.386838  0.815292   
+9   fasttext  Proposed Model           LOS > 7 Days  72.828062  0.321753   
+10  fasttext  Proposed Model  In-Hospital Mortality  86.871620  0.151856   
+11  fasttext  Proposed Model       In-ICU Mortality  87.310178  0.467832   
+12  word2vec  Proposed Model           LOS > 3 Days  70.626804  0.146087   
+13  word2vec  Proposed Model           LOS > 7 Days  72.081807  0.390396   
+14  word2vec  Proposed Model  In-Hospital Mortality  86.507436  0.099344   
+15  word2vec  Proposed Model       In-ICU Mortality  87.102692  0.023684   
 
+    auprc_mean  auprc_std    F1_mean    F1_std   acc_mean   acc_std  
+0    64.686200        NaN  60.033076       NaN  66.992943       NaN  
+1    21.571806        NaN   0.000000       NaN  91.941725       NaN  
+2    57.177419   1.093105  44.111141  2.014651  91.463692  0.289732  
+3    49.904815        NaN  43.956044       NaN  94.195311       NaN  
+4    63.591552        NaN  55.046440       NaN  66.947416       NaN  
+5    18.775525        NaN   0.560224       NaN  91.918962       NaN  
+6    55.889628   2.021718  42.449403  5.763513  91.395402  0.032192  
+7    51.162267   1.331882  40.868114  6.870789  94.115639  0.144866  
+8    64.412548   0.635591  55.749758  3.228010  66.856362  0.869196  
+9    21.467260   1.590255   3.533745  1.101565  91.941725  0.032192  
+10   55.847325   0.216139  46.271791  3.310893  91.156385  0.016096  
+11   50.189660   1.004515  39.254638  3.961829  94.240838  0.160962  
+12   64.528896   0.234566  54.720018  3.414350  66.822217  0.692137  
+13   21.208395   0.133040   0.843488  0.396132  91.975871  0.016096  
+14   53.876009   1.690131  40.419380  2.079437  91.304348  0.418502  
+15   50.819322   0.924092  36.842486  4.597261  94.149784  0.000000   
 
-word2vec-mort_hosp: ['24.39140510559082', '23.986725330352783']
-fasttext-mort_hosp: ['23.338331699371338', '23.647236824035645']
-concat-mort_hosp: ['25.055757999420166', '25.087976932525635']
+word2vec-mort_hosp: ['74.19354343414307']
+word2vec-mort_icu: ['74.37661933898926']
+word2vec-los_3: ['74.11349272727966']
+word2vec-los_7: ['66.14950013160706']
+fasttext-mort_hosp: ['90.71541333198547']
+fasttext-mort_icu: ['82.56893301010132']
+fasttext-los_3: ['82.772376537323']
+fasttext-los_7: ['66.65838551521301']
+concat-mort_hosp: ['75.46683812141418']
+concat-mort_icu: ['59.03439283370972']
+concat-los_3: ['83.84913444519043']
+concat-los_7: ['68.13258695602417']
+biobert-mort_hosp: ['92.73887920379639']
+biobert-mort_icu: ['101.14364457130432']
+biobert-los_3: ['92.87387323379517']
+biobert-los_7: ['83.97144603729248']
