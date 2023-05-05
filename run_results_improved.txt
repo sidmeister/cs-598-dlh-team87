@@ -1,0 +1,95 @@
+  model_type model_category        prediction_task              auc   
+0        GRU       baseline           LOS > 3 Days  69.51 +/- 0.347  \
+1        GRU       baseline           LOS > 7 Days  73.47 +/- 0.552   
+2        GRU       baseline  In-Hospital Mortality  87.81 +/- 0.262   
+3        GRU       baseline       In-ICU Mortality  88.79 +/- 0.395   
+4       LSTM       baseline           LOS > 3 Days  68.89 +/- 0.301   
+5       LSTM       baseline           LOS > 7 Days  72.46 +/- 1.107   
+6       LSTM       baseline  In-Hospital Mortality  87.56 +/- 0.366   
+7       LSTM       baseline       In-ICU Mortality  88.19 +/- 0.525   
+
+             auprc               F1              acc  
+0  63.74 +/- 0.288  55.20 +/- 1.232  65.90 +/- 0.197  
+1  20.83 +/- 1.205   5.25 +/- 2.355  91.75 +/- 0.167  
+2  56.19 +/- 0.553  45.55 +/- 0.987  91.32 +/- 0.186  
+3  52.19 +/- 0.965  43.66 +/- 2.299  94.12 +/- 0.093  
+4  62.99 +/- 0.396  54.73 +/- 1.623  65.76 +/- 0.442  
+5  19.18 +/- 1.091   2.59 +/- 1.778  91.79 +/- 0.124  
+6  55.07 +/- 0.854  42.84 +/- 2.642  91.22 +/- 0.178  
+7  49.54 +/- 1.367  41.44 +/- 2.751  94.02 +/- 0.151  
+
+==================================================================================
+
+  embedding       model_category        prediction_task              auc   
+0    biobert  MultiModal Baseline           LOS > 3 Days  70.25 +/- 0.188  \
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.64 +/- 0.301   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.74 +/- 0.021   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.33 +/- 0.253   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.19 +/- 0.235   
+5     concat  MultiModal Baseline           LOS > 7 Days  72.31 +/- 0.198   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.28 +/- 0.081   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.27 +/- 0.296   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.88 +/- 0.193   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.97 +/- 0.147   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.76 +/- 0.153   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  88.82 +/- 0.102   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.11 +/- 0.125   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.79 +/- 0.042   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.33 +/- 0.022   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  88.76 +/- 0.030   
+
+              auprc               F1              acc  
+0   63.96 +/- 0.046  54.79 +/- 0.627  66.12 +/- 0.274  
+1   24.17 +/- 0.074   1.68 +/- 0.000  91.99 +/- 0.000  
+2   58.31 +/- 0.069  46.12 +/- 0.207  91.62 +/- 0.032  
+3   52.98 +/- 0.173  44.46 +/- 1.299  94.34 +/- 0.016  
+4   63.90 +/- 0.205  56.11 +/- 0.942  66.64 +/- 0.370  
+5   21.82 +/- 0.304   3.83 +/- 0.022  92.00 +/- 0.048  
+6   59.40 +/- 0.099  48.24 +/- 0.093  91.96 +/- 0.064  
+7   53.33 +/- 0.970  48.05 +/- 1.868  94.49 +/- 0.064  
+8   63.38 +/- 0.269  54.71 +/- 2.011  65.84 +/- 0.402  
+9   22.19 +/- 0.189   5.42 +/- 0.716  92.07 +/- 0.016  
+10  57.17 +/- 1.097  45.85 +/- 0.013  91.61 +/- 0.080  
+11  51.51 +/- 0.143  42.14 +/- 1.101  94.13 +/- 0.000  
+12  63.60 +/- 0.089  55.44 +/- 0.639  66.26 +/- 0.097  
+13  22.89 +/- 0.530   4.88 +/- 1.507  92.02 +/- 0.080  
+14  58.92 +/- 0.055  47.91 +/- 0.822  91.76 +/- 0.097  
+15  52.77 +/- 0.160  45.09 +/- 0.985  94.26 +/- 0.032 
+
+==================================================================================
+
+   embedding  model_category        prediction_task              auc   
+0    biobert  Proposed Model           LOS > 3 Days    70.97 +/- nan  \
+1    biobert  Proposed Model           LOS > 7 Days    72.79 +/- nan   
+2    biobert  Proposed Model  In-Hospital Mortality  87.66 +/- 0.282   
+3    biobert  Proposed Model       In-ICU Mortality    87.65 +/- nan   
+4     concat  Proposed Model           LOS > 3 Days    70.49 +/- nan   
+5     concat  Proposed Model           LOS > 7 Days    70.09 +/- nan   
+6     concat  Proposed Model  In-Hospital Mortality  87.00 +/- 0.648   
+7     concat  Proposed Model       In-ICU Mortality  87.78 +/- 0.763   
+8   fasttext  Proposed Model           LOS > 3 Days  70.39 +/- 0.815   
+9   fasttext  Proposed Model           LOS > 7 Days  72.83 +/- 0.322   
+10  fasttext  Proposed Model  In-Hospital Mortality  86.87 +/- 0.152   
+11  fasttext  Proposed Model       In-ICU Mortality  87.31 +/- 0.468   
+12  word2vec  Proposed Model           LOS > 3 Days  70.63 +/- 0.146   
+13  word2vec  Proposed Model           LOS > 7 Days  72.08 +/- 0.390   
+14  word2vec  Proposed Model  In-Hospital Mortality  86.51 +/- 0.099   
+15  word2vec  Proposed Model       In-ICU Mortality  87.10 +/- 0.024   
+
+              auprc               F1              acc  
+0     64.69 +/- nan    60.03 +/- nan    66.99 +/- nan  
+1     21.57 +/- nan     0.00 +/- nan    91.94 +/- nan  
+2   57.18 +/- 1.093  44.11 +/- 2.015  91.46 +/- 0.290  
+3     49.90 +/- nan    43.96 +/- nan    94.20 +/- nan  
+4     63.59 +/- nan    55.05 +/- nan    66.95 +/- nan  
+5     18.78 +/- nan     0.56 +/- nan    91.92 +/- nan  
+6   55.89 +/- 2.022  42.45 +/- 5.764  91.40 +/- 0.032  
+7   51.16 +/- 1.332  40.87 +/- 6.871  94.12 +/- 0.145  
+8   64.41 +/- 0.636  55.75 +/- 3.228  66.86 +/- 0.869  
+9   21.47 +/- 1.590   3.53 +/- 1.102  91.94 +/- 0.032  
+10  55.85 +/- 0.216  46.27 +/- 3.311  91.16 +/- 0.016  
+11  50.19 +/- 1.005  39.25 +/- 3.962  94.24 +/- 0.161  
+12  64.53 +/- 0.235  54.72 +/- 3.414  66.82 +/- 0.692  
+13  21.21 +/- 0.133   0.84 +/- 0.396  91.98 +/- 0.016  
+14  53.88 +/- 1.690  40.42 +/- 2.079  91.30 +/- 0.419  
+15  50.82 +/- 0.924  36.84 +/- 4.597  94.15 +/- 0.000 
