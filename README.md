@@ -69,7 +69,7 @@ cd cs-598-dlh-team87
 
 ## Pretrained Models
 
-`pretrained-models` is the directory for the models that we generated plus maybe the models we used </br>
+`pretrained-models` is the directory for the models that we generated. </br>
 The models are in the format of: 
 * (GRU|LSTM)-(128|256)-problem_type-best_model.hdf5: These are the models generated from `07-TimeseriesBaseline.ipynb`
     * 128|256 denotes the GRU|LSTM size
@@ -81,6 +81,7 @@ The models are in the format of:
     * problem_type: mort_hosp, mort_icu, los_3, los_7 
 
 ## References
+Original paper's repository via https://github.com/tanlab/ConvolutionMedicalNer
 
 Download the MIMIC-III dataset via https://mimic.physionet.org/
 
