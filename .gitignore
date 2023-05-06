@@ -20,4 +20,4 @@ embeddings/*
 data/*
 *.whl
 tmpufnnj2ep/*
-*.hdf5
+# *.hdf5
