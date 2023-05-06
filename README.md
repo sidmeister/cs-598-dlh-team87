@@ -73,9 +73,12 @@ cd cs-598-dlh-team87
 The models are in the format of: 
 * (GRU|LSTM)-(128|256)-problem_type-best_model.hdf5: These are the models generated from `07-TimeseriesBaseline.ipynb`
     * 128|256 denotes the GRU|LSTM size
-* avg-(fasttext|concat|biobert|word2vec)-(problem_type)-best_model.hdf5: These are models generated from `08-Multimodal-Baseline.ipynb`
-* 64-basiccnn1d-(fasttext|concat|biobert|word2vec)-(problem_type)-best_model.hdf5: These are the models generated from `09-Proposed-Model.ipynb`
-    * 64 denotes the max height of the CNN image size 
+    * problem_type: mort_hosp, mort_icu, los_3, los_7
+* avg-(fasttext|concat|biobert|word2vec)-problem_type-best_model.hdf5: These are models generated from `08-Multimodal-Baseline.ipynb`
+    * problem_type: mort_hosp, mort_icu, los_3, los_7
+* 64-basiccnn1d-(fasttext|concat|biobert|word2vec)-problem_type-best_model.hdf5: These are the models generated from `09-Proposed-Model.ipynb`
+    * 64 denotes the max height of the CNN image size
+    * problem_type: mort_hosp, mort_icu, los_3, los_7 
 
 ## References
 
