@@ -69,8 +69,13 @@ cd cs-598-dlh-team87
 
 ## Pretrained Models
 
-`saved_dir_here` is the directory for the models that we generated plus maybe the models we used </br>
-more info can be found here: https://github.com/paperswithcode/releasing-research-code#4-pre-trained-models
+`pretrained-models` is the directory for the models that we generated plus maybe the models we used </br>
+The models are in the format of: 
+* (GRU|LSTM)-(128|256)-problem_type-best_model.hdf5: These are the models generated from `07-TimeseriesBaseline.ipynb`
+    * 128|256 denotes the GRU|LSTM size
+* avg-(fasttext|concat|biobert|word2vec)-(problem_type)-best_model.hdf5: These are models generated from `08-Multimodal-Baseline.ipynb`
+* 64-basiccnn1d-(fasttext|concat|biobert|word2vec)-(problem_type)-best_model.hdf5: These are the models generated from `09-Proposed-Model.ipynb`
+    * 64 denotes the max height of the CNN image size 
 
 ## References
 
