@@ -1,3 +1,11 @@
+# TODO 
+data download -> this should show how to download ancillary csv files/other stuff
+preprocessing command explicitly shown 
+
+original paper's study results in your repo
+	-> your results of original model vs their claim 
+
+
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
 ## Prerequisites
@@ -7,16 +15,19 @@
 
     Run the below
 
-    `conda env create --name your_env_name_here --file=environments.yaml`
+    `conda env create --name your_env_name_here --file=environments.yaml` </br>
+    `conda activate your_env_name_here`
 
 1. If you are having issues installing any of the packages via the conda command above use the directory `package-installer-helpers` to aid in installing:
     * _install-all.sh_ used to install dependencies manually without the `environments.yaml` file
         * This file encompasses all of the commands from the below files
     * _install-biobert-embedding.sh_ used to install biobert embedding model dependency
     * _install-glove.sh_ used to install the glove dependency
-    * _install-pip-dependencies.sh_ used to install the pip dependencies
+    * _install-pip-dependencies.sh_ used to install all other pip dependencies
 
-
+1. Install the biobert model dependencies (You will pass in the file path as a string from the extracted biobert dependencies to the Biobert class object): </br>
+`wget https://www.dropbox.com/s/hvsemunmv0htmdk/biobert_v1.1_pubmed_pytorch_model.tar.gz` </br>
+`tar -xvzf  biobert_v1.1_pubmed_pytorch_model.tar.gz`
 
 ## Training Code
 
@@ -41,44 +52,52 @@ cd cs-598-dlh-team87
 
 2. Run `04-Apply-med7-on-Clinical-Notes.ipynb` to extract medical entities. 
 
-2. Unzip embeddings.zip into `embeddings` folder 
+2. Unzip embeddings.zip into `embeddings` folder.
 
-### Actual Training Code
+2. Run `05-Represent-Entities-With-Different-Embeddings.ipynb`. This notebook will do the following actions: 
+    1. To convert medical entities into word representations.
+    1. Prepare the timeseries data to fed through GRU / LSTM.
+
+2. Run `05.5_biobert_embedding.ipynb` to generate the biobert embedding vectors.
+
+2. Run `06-Create-Timeseries-Data.ipynb` to generate the appropriate ids to run in the baseline model.
+
+## Training Code
 
 ### The below notebook files perform training and writing evaluative results to the hard drive. 
 
-1. Run `05-Represent-Entities-With-Different-Embeddings.ipynb` . This notebook will do the following things
-    a) To convert medical entities into word representations.
-    b) Prepare the timeseries data to fed through GRU / LSTM.
-    c) Run multimodal baseline to predict 4 different clinical tasks
+1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model, LSTM and GRU, across 128 and 256 dimensionality of the output space for the RNN models.
 
-1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
+1. Run `08-Multimodal-Baseline.ipynb` to generate the baseline multi-modal model. This model will train using all types of embeddings: concat, word2vec, fasttext, and biobert to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7).
 
-1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
+1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7).
 
 ## Evaluation Code
 
-### The below notebook files perform training and writing evaluative results to the hard drive. However step 3 is critical to evaluate the results of the trained models.
+### The below notebook files perform training and writing evaluative results to the hard drive. However step 4 is critical to generate the evaluation results of the trained models.
 
-1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model to predict 4 different clinical tasks.
+1. Run `07-Timeseries-Baseline.ipynb` to run and evaluate timeseries baseline model to predict 4 different clinical tasks.
 
-1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks.
+1. Run `08-Multimodal-Baseline.ipynb` to run and evaluate the multi-modal baseline.
+
+1. Run `09-Proposed-Model.ipynb` to run and evaluate the proposed model to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7).
 
 1. Run `10-Summary.ipynb` to display results of each model.
-
 
 ## Pretrained Models
 
 `pretrained-models` is the directory for the models that we generated. </br>
 The models are in the format of: 
-* (GRU|LSTM)-(128|256)-problem_type-best_model.hdf5: These are the models generated from `07-TimeseriesBaseline.ipynb`
+* (GRU|LSTM)-(128|256)-problem_type*-best_model.hdf5: These are the models generated from `07-TimeseriesBaseline.ipynb`
     * 128|256 denotes the GRU|LSTM size
     * problem_type: mort_hosp, mort_icu, los_3, los_7
-* avg-(fasttext|concat|biobert|word2vec)-problem_type-best_model.hdf5: These are models generated from `08-Multimodal-Baseline.ipynb`
+* avg-embedding_type*-problem_type*-best_model.hdf5: These are models generated from `08-Multimodal-Baseline.ipynb`
     * problem_type: mort_hosp, mort_icu, los_3, los_7
-* 64-basiccnn1d-(fasttext|concat|biobert|word2vec)-problem_type-best_model.hdf5: These are the models generated from `09-Proposed-Model.ipynb`
+    * embedding_type: fasttext, concat, biobert, word2vec
+* 64-basiccnn1d-embedding_type*-problem_type*-best_model.hdf5: These are the models generated from `09-Proposed-Model.ipynb`
     * 64 denotes the max height of the CNN image size
     * problem_type: mort_hosp, mort_icu, los_3, los_7 
+    * embedding_type: fasttext, concat, biobert, word2vec
 
 ## References
 Original paper's repository via https://github.com/tanlab/ConvolutionMedicalNer
@@ -94,3 +113,7 @@ Download Pre-trained Word2Vec & FastText embeddings: https://github.com/kexinhua
 Preprocessing Script: https://github.com/kaggarwal/ClinicalNotesICU
 
 Biobert embedding repo: https://github.com/Overfitter/biobert_embedding
+
+<style type="text/css">
+    ol ol { list-style-type: lower-alpha; }
+</style>
