@@ -1,0 +1,1 @@
+time to run word2vec-mort_icu: 121.70263600349426

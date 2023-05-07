@@ -1,0 +1,1 @@
+time to run word2vec-los_7: 194.98438954353333

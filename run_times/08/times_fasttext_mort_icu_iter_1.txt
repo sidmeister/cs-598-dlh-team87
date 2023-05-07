@@ -1,0 +1,1 @@
+time to run fasttext-mort_icu: 77.84544157981873
