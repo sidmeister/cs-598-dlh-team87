@@ -1,11 +1,3 @@
-# TODO 
-data download -> this should show how to download ancillary csv files/other stuff
-preprocessing command explicitly shown 
-
-original paper's study results in your repo
-	-> your results of original model vs their claim 
-
-
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
 ## Prerequisites
@@ -25,11 +17,27 @@ original paper's study results in your repo
     * _install-glove.sh_ used to install the glove dependency
     * _install-pip-dependencies.sh_ used to install all other pip dependencies
 
+### Data downloads
+1. Install the Med-7 data </br>
+`wget https://www.dropbox.com/s/xbgsy6tyctvrqz3/en_core_med7_lg.tar.gz?dl=1` </br>
+`pip install /path/to/downloaded/spacy2_model` </br>
+
+1. Install the pertinent Mimic-III data </br>
+`wget https://console.cloud.google.com/storage/browser/mimic_extract;tab=objects?prefix=&forceOnObjectsSortingFiltering=false?` </br>
+
+1. Install the pre-trained fasttext model </br>
+`wget https://drive.google.com/drive/folders/1bcR6ThMEPhguU9T4qPcPaZJ3GQzhLKlz?usp=sharing` </br>
+
+1. Install the pre-trained word2vec model </br>
+`wget https://drive.google.com/file/d/14EOqvvjJ8qUxihQ_SFnuRsjK9pOTrP-6/view` </br>
+
 1. Install the biobert model dependencies (You will pass in the file path as a string from the extracted biobert dependencies to the Biobert class object): </br>
 `wget https://www.dropbox.com/s/hvsemunmv0htmdk/biobert_v1.1_pubmed_pytorch_model.tar.gz` </br>
 `tar -xvzf  biobert_v1.1_pubmed_pytorch_model.tar.gz`
+    a. You will need to move the extracted files to /home/ubuntu/biobertmodel
 
-## Training Code
+
+# Training Code
 
 ### Pre-requisites to start training code
 
@@ -66,11 +74,11 @@ cd cs-598-dlh-team87
 
 ### The below notebook files perform training and writing evaluative results to the hard drive. 
 
-1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model, LSTM and GRU, across 128 and 256 dimensionality of the output space for the RNN models.
+1. Run `07-Timeseries-Baseline.ipynb` to run timeseries baseline model, LSTM and GRU, across 128 and 256 dimensionality of the output space for the RNN models. This notebook requires a `/results/timeseries-baseline` directory to be created.
 
-1. Run `08-Multimodal-Baseline.ipynb` to generate the baseline multi-modal model. This model will train using all types of embeddings: concat, word2vec, fasttext, and biobert to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7).
+1. Run `08-Multimodal-Baseline.ipynb` to generate the baseline multi-modal model. This model will train using all types of embeddings: concat, word2vec, fasttext, and biobert to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7). This notebook requires a `/results/multimodal-baseline` directory to be created.
 
-1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7).
+1. Run `09-Proposed-Model.ipynb` to run proposed model to predict 4 different clinical tasks (hosp_mort, icu_mort, los_3, los_7). This notebook requires a `/results/cnn` directory to be created.
 
 ## Evaluation Code
 
@@ -113,7 +121,3 @@ Download Pre-trained Word2Vec & FastText embeddings: https://github.com/kexinhua
 Preprocessing Script: https://github.com/kaggarwal/ClinicalNotesICU
 
 Biobert embedding repo: https://github.com/Overfitter/biobert_embedding
-
-<style type="text/css">
-    ol ol { list-style-type: lower-alpha; }
-</style>
