@@ -1,6 +1,6 @@
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
-##<a name="prereq"></a> Prerequisites
+## <a name="prereq"></a> Prerequisites
 1. Setup your conda virtual environment with the following environment information:
 
     Use `environments.yaml` to generate the dependencies for the conda environment (jupyter notebooks, tensorflow, spacy, gensim...)
