@@ -1,6 +1,6 @@
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
-## Prerequisites
+##<a name="prereq"></a> Prerequisites
 1. Setup your conda virtual environment with the following environment information:
 
     Use `environments.yaml` to generate the dependencies for the conda environment (jupyter notebooks, tensorflow, spacy, gensim...)
@@ -46,7 +46,7 @@
 https://github.com/sidmeister/cs-598-dlh-team87.git
 cd cs-598-dlh-team87
 ```
-2. Run MIMIC-Extract Pipeline as explained in https://github.com/MLforHealth/MIMIC_Extract.   
+2. Run prerequisites as described in the [above section](#prereq). 
 
 2. Copy the output file of MIMIC-Extract Pipeline named `all_hourly_data.h5` to `data` folder.
 
