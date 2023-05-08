@@ -1,0 +1,1 @@
+time to run fasttext-mort_hosp: 78.17005109786987

@@ -1,0 +1,1 @@
+time to run fasttext-los_7: 159.15052151679993

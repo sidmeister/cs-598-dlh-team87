@@ -1,0 +1,244 @@
+adam_opt = Adam(lr=0.0006, decay=0.01)
+epoch = 70
+
+['word2vec', 'fasttext', 'concat','biobert']
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+
+[90.62504315376282, 90.62512803077698, 213.27144598960876, 144.49058961868286]
+[90.16234993934631, 128.89189052581787, 136.54620337486267, 128.9479479789734]
+[191.83519101142883, 121.55704140663147, 144.67096972465515, 175.59074759483337]
+[108.01440620422363, 138.69764494895935, 185.76743412017822, 115.37936615943909]
+final model training time: 2208.330319404602
+
+
+   embedding       model_category        prediction_task   auc_mean  auc_std   
+0    biobert  MultiModal Baseline           LOS > 3 Days  69.935795      NaN  \
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.357360      NaN   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.661145      NaN   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.515274      NaN   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.261181      NaN   
+5     concat  MultiModal Baseline           LOS > 7 Days  71.994382      NaN   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.250704      NaN   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.453516      NaN   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.801066      NaN   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.696715      NaN   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.569113      NaN   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  89.028940      NaN   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.274498      NaN   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.296727      NaN   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.096714      NaN   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  89.397926      NaN   
+
+====================================================================================
+
+adam_opt = Adam(lr=0.0004, decay=0.01)
+epoch = 70
+
+
+['word2vec', 'fasttext', 'concat','biobert']
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+
+
+[547.9467535018921, 90.75716710090637, 486.9697382450104, 440.65074014663696]
+[223.04528284072876, 230.93830609321594, 200.3311324119568, 549.8763809204102]
+[231.1606104373932, 177.03893566131592, 231.09381794929504, 191.76548385620117]
+[311.6573369503021, 241.04482197761536, 201.13317155838013, 269.8360421657562]
+final model training time: 4628.454314470291
+
+
+   embedding       model_category        prediction_task   auc_mean  auc_std   
+0    biobert  MultiModal Baseline           LOS > 3 Days  70.206006      NaN  \
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.315327      NaN   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.764698      NaN   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.342258      NaN   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.256999      NaN   
+5     concat  MultiModal Baseline           LOS > 7 Days  71.938291      NaN   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.546554      NaN   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.178299      NaN   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.579403      NaN   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.858556      NaN   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.909007      NaN   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  88.815714      NaN   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.229719      NaN   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.423388      NaN   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.532292      NaN   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  88.607486      NaN
+
+====================================================================================
+
+# this run was with two iterations
+adam_opt = Adam(lr=0.0006, decay=0.01)
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+embedding_types = ['word2vec', 'fasttext', 'concat','biobert']
+iter_num = 2
+num_epoch = 70
+
+   embedding       model_category        prediction_task   auc_mean   auc_std  \
+0    biobert  MultiModal Baseline           LOS > 3 Days  70.252325  0.187505   
+1    biobert  MultiModal Baseline           LOS > 7 Days  74.643501  0.300611   
+2    biobert  MultiModal Baseline  In-Hospital Mortality  88.739111  0.020846   
+3    biobert  MultiModal Baseline       In-ICU Mortality  89.328204  0.252963   
+4     concat  MultiModal Baseline           LOS > 3 Days  70.189386  0.234536   
+5     concat  MultiModal Baseline           LOS > 7 Days  72.313796  0.198215   
+6     concat  MultiModal Baseline  In-Hospital Mortality  88.282125  0.080990   
+7     concat  MultiModal Baseline       In-ICU Mortality  89.273395  0.296025   
+8   fasttext  MultiModal Baseline           LOS > 3 Days  69.875026  0.193373   
+9   fasttext  MultiModal Baseline           LOS > 7 Days  72.965633  0.147375   
+10  fasttext  MultiModal Baseline  In-Hospital Mortality  87.763158  0.153324   
+11  fasttext  MultiModal Baseline       In-ICU Mortality  88.817783  0.102190   
+12  word2vec  MultiModal Baseline           LOS > 3 Days  70.114266  0.125487   
+13  word2vec  MultiModal Baseline           LOS > 7 Days  73.788927  0.042086   
+14  word2vec  MultiModal Baseline  In-Hospital Mortality  88.332235  0.021638   
+15  word2vec  MultiModal Baseline       In-ICU Mortality  88.761842  0.029591 
+
+    auprc_mean  auprc_std    F1_mean    F1_std   acc_mean   acc_std  
+0    63.964160   0.046018  54.789374  0.627255  66.116549  0.273636  
+1    24.169121   0.074337   1.675978  0.000000  91.987252  0.000000  
+2    58.309004   0.069363  46.120059  0.207059  91.623037  0.032192  
+3    52.983415   0.173019  44.455932  1.298979  94.343273  0.016096  
+4    63.901150   0.205496  56.111296  0.942360  66.640109  0.370213  
+5    21.816522   0.304164   3.830434  0.022231  91.998634  0.048289  
+6    59.395709   0.098808  48.240758  0.092737  91.964489  0.064385  
+7    53.331527   0.969538  48.045990  1.868316  94.491236  0.064385  
+8    63.383403   0.269081  54.710064  2.011028  65.843387  0.402405  
+9    22.194231   0.189423   5.423976  0.715512  92.066925  0.016096  
+10   57.174252   1.096827  45.848702  0.013132  91.611655  0.080481  
+11   51.507826   0.143426  42.141995  1.100766  94.127020  0.000000  
+12   63.599486   0.089373  55.438304  0.639145  66.264512  0.096577  
+13   22.894872   0.530419   4.880330  1.507009  92.021398  0.080481  
+14   58.916211   0.055301  47.911996  0.822433  91.759618  0.096577  
+15   52.771605   0.160215  45.091971  0.984811  94.263601  0.032192  
+
+[154.21198153495789, 108.14102745056152, 131.40392804145813, 199.23999428749084, 153.30717134475708, 121.70263600349426, 159.22947239875793, 194.98438954353333]
+[106.10375833511353, 77.84544157981873, 112.21864557266235, 159.15052151679993, 78.17005109786987, 136.94606518745422, 121.70871949195862, 114.63378572463989]
+[100.16451692581177, 150.883043050766, 201.45986557006836, 158.65079617500305, 146.9994649887085, 110.6108648777008, 125.10123825073242, 197.18419122695923]
+[86.60719466209412, 102.06179594993591, 181.22611117362976, 152.58204054832458, 152.55921387672424, 145.80921125411987, 181.53472995758057, 138.50401306152344]
+final model training time: 4463.946449756622
+
+====================================================================================
+
+model_patience = 3
+monitor_criteria = 'val_loss'
+batch_size = 128
+
+epoch_num = 100
+unit_sizes = [128, 256]
+iter_num = 3
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+layers = ["LSTM", "GRU"]
+
+  model_type model_category        prediction_task   auc_mean   auc_std   
+0        GRU       baseline           LOS > 3 Days  69.508400  0.346868  \
+1        GRU       baseline           LOS > 7 Days  73.470276  0.551879   
+2        GRU       baseline  In-Hospital Mortality  87.809871  0.262454   
+3        GRU       baseline       In-ICU Mortality  88.792227  0.395313   
+4       LSTM       baseline           LOS > 3 Days  68.889770  0.300833   
+5       LSTM       baseline           LOS > 7 Days  72.461692  1.107021   
+6       LSTM       baseline  In-Hospital Mortality  87.563950  0.366416   
+7       LSTM       baseline       In-ICU Mortality  88.185071  0.524929   
+
+   auprc_mean  auprc_std    F1_mean    F1_std   acc_mean   acc_std  
+0   63.744129   0.288292  55.197658  1.231923  65.896502  0.196567  
+1   20.833818   1.205033   5.249035  2.355203  91.748236  0.167122  
+2   56.191578   0.552545  45.554067  0.987039  91.315730  0.186466  
+3   52.194201   0.964508  43.655135  2.299311  94.119432  0.092932  
+4   62.989391   0.396379  54.733257  1.623476  65.762680  0.442432  
+5   19.183843   1.091341   2.588375  1.778297  91.785485  0.123945  
+6   55.070503   0.853583  42.842297  2.641579  91.222606  0.178088  
+7   49.543605   1.367227  41.440562  2.751384  94.017342  0.150936  
+
+
+LSTM-128-mort_hosp: [27.423593282699585, 23.37168836593628, 23.419687509536743]
+LSTM-128-mort_icu: [23.437129259109497, 27.258125066757202, 27.18425178527832]
+LSTM-128-los_3: [23.888892889022827, 23.365346908569336, 27.301791667938232]
+LSTM-128-los_7: [23.422858238220215, 31.15825390815735, 27.229031562805176]
+LSTM-256-mort_hosp: [38.6735782623291, 45.119561433792114, 45.30541634559631]
+LSTM-256-mort_icu: [39.158761501312256, 45.2203254699707, 32.37520456314087]
+LSTM-256-los_3: [38.660648822784424, 31.77276110649109, 38.46372628211975]
+LSTM-256-los_7: [38.71544432640076, 45.21351218223572, 38.49830675125122]
+GRU-128-mort_hosp: [26.408920526504517, 32.875468730926514, 29.732297658920288]
+GRU-128-mort_icu: [32.67347502708435, 26.590824842453003, 29.72426986694336]
+GRU-128-los_3: [32.78556680679321, 26.461788654327393, 32.92191934585571]
+GRU-128-los_7: [32.83713746070862, 30.313642501831055, 29.492889642715454]
+GRU-256-mort_hosp: [36.6663384437561, 47.716737270355225, 36.61557579040527]
+GRU-256-mort_icu: [41.84048581123352, 36.50800275802612, 41.92862582206726]
+GRU-256-los_3: [41.95435690879822, 47.32824468612671, 42.39595866203308]
+GRU-256-los_7: [58.6218786239624, 41.98061442375183, 42.431241273880005]
+
+
+
+====================================================================================
+
+
+embedding_types = ['word2vec', 'fasttext', 'concat', 'biobert']
+embedding_dict = [ner_word2vec, ner_fasttext, ner_concat,biobertvec ]
+batch_size = 64
+monitor_criteria = 'val_loss'
+
+
+filter_number = 32
+ner_representation_limit = 64
+activation_func = "relu"
+
+
+sequence_model = "GRU"
+sequence_hidden_unit = 256
+
+
+target_problems = ['mort_hosp', 'mort_icu', 'los_3', 'los_7']
+num_epoch = 10
+model_patience = 5
+iterations = 1
+
+   embedding  model_category        prediction_task   auc_mean   auc_std   
+0    biobert  Proposed Model           LOS > 3 Days  70.966406       NaN  \
+1    biobert  Proposed Model           LOS > 7 Days  72.793931       NaN   
+2    biobert  Proposed Model  In-Hospital Mortality  87.663704  0.282382   
+3    biobert  Proposed Model       In-ICU Mortality  87.653400       NaN   
+4     concat  Proposed Model           LOS > 3 Days  70.492858       NaN   
+5     concat  Proposed Model           LOS > 7 Days  70.088110       NaN   
+6     concat  Proposed Model  In-Hospital Mortality  87.000145  0.648458   
+7     concat  Proposed Model       In-ICU Mortality  87.782888  0.763360   
+8   fasttext  Proposed Model           LOS > 3 Days  70.386838  0.815292   
+9   fasttext  Proposed Model           LOS > 7 Days  72.828062  0.321753   
+10  fasttext  Proposed Model  In-Hospital Mortality  86.871620  0.151856   
+11  fasttext  Proposed Model       In-ICU Mortality  87.310178  0.467832   
+12  word2vec  Proposed Model           LOS > 3 Days  70.626804  0.146087   
+13  word2vec  Proposed Model           LOS > 7 Days  72.081807  0.390396   
+14  word2vec  Proposed Model  In-Hospital Mortality  86.507436  0.099344   
+15  word2vec  Proposed Model       In-ICU Mortality  87.102692  0.023684   
+
+    auprc_mean  auprc_std    F1_mean    F1_std   acc_mean   acc_std  
+0    64.686200        NaN  60.033076       NaN  66.992943       NaN  
+1    21.571806        NaN   0.000000       NaN  91.941725       NaN  
+2    57.177419   1.093105  44.111141  2.014651  91.463692  0.289732  
+3    49.904815        NaN  43.956044       NaN  94.195311       NaN  
+4    63.591552        NaN  55.046440       NaN  66.947416       NaN  
+5    18.775525        NaN   0.560224       NaN  91.918962       NaN  
+6    55.889628   2.021718  42.449403  5.763513  91.395402  0.032192  
+7    51.162267   1.331882  40.868114  6.870789  94.115639  0.144866  
+8    64.412548   0.635591  55.749758  3.228010  66.856362  0.869196  
+9    21.467260   1.590255   3.533745  1.101565  91.941725  0.032192  
+10   55.847325   0.216139  46.271791  3.310893  91.156385  0.016096  
+11   50.189660   1.004515  39.254638  3.961829  94.240838  0.160962  
+12   64.528896   0.234566  54.720018  3.414350  66.822217  0.692137  
+13   21.208395   0.133040   0.843488  0.396132  91.975871  0.016096  
+14   53.876009   1.690131  40.419380  2.079437  91.304348  0.418502  
+15   50.819322   0.924092  36.842486  4.597261  94.149784  0.000000   
+
+word2vec-mort_hosp: ['74.19354343414307']
+word2vec-mort_icu: ['74.37661933898926']
+word2vec-los_3: ['74.11349272727966']
+word2vec-los_7: ['66.14950013160706']
+fasttext-mort_hosp: ['90.71541333198547']
+fasttext-mort_icu: ['82.56893301010132']
+fasttext-los_3: ['82.772376537323']
+fasttext-los_7: ['66.65838551521301']
+concat-mort_hosp: ['75.46683812141418']
+concat-mort_icu: ['59.03439283370972']
+concat-los_3: ['83.84913444519043']
+concat-los_7: ['68.13258695602417']
+biobert-mort_hosp: ['92.73887920379639']
+biobert-mort_icu: ['101.14364457130432']
+biobert-los_3: ['92.87387323379517']
+biobert-los_7: ['83.97144603729248']
