@@ -1,6 +1,8 @@
 # Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
 
 ## <a name="prereq"></a> Prerequisites
+
+### Environment Setup
 1. Setup your conda virtual environment with the following environment information:
 
     Use `environments.yaml` to generate the dependencies for the conda environment (jupyter notebooks, tensorflow, spacy, gensim...)
@@ -106,6 +108,13 @@ The models are in the format of:
     * 64 denotes the max height of the CNN image size
     * problem_type: mort_hosp, mort_icu, los_3, los_7 
     * embedding_type: fasttext, concat, biobert, word2vec
+# Results
+## Below are the results from training the original model
+
+![image info](./pictures/hosp_mort.png)
+![image info](./pictures/icu_mort.png)
+![image info](./pictures/los_gt_3.png)
+![image info](./pictures/los_gt_7.png)
 
 ## References
 Original paper's repository via https://github.com/tanlab/ConvolutionMedicalNer
