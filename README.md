@@ -112,8 +112,17 @@ The models are in the format of:
 ## Below are the results from training the original model
 
 ![image info](./pictures/hosp_mort.png)
+
+---
+
 ![image info](./pictures/icu_mort.png)
+
+---
+
 ![image info](./pictures/los_gt_3.png)
+
+---
+
 ![image info](./pictures/los_gt_7.png)
 
 ## References
