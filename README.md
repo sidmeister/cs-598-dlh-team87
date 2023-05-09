@@ -1,4 +1,4 @@
-# Implementation for Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning
+# Implementation for [Improving Clinical Outcome Predictions Using Convolution over Medical Entities with Multimodal Learning](#refereneces)
 
 ## <a name="prereq"></a> Prerequisites
 
@@ -125,7 +125,9 @@ The models are in the format of:
 
 ![image info](./pictures/los_gt_7.png)
 
-## References
+## <a name="refereneces"></a> References
+Original paper via: https://www.sciencedirect.com/science/article/pii/S0933365721001056?via%3Dihub
+
 Original paper's repository via https://github.com/tanlab/ConvolutionMedicalNer
 
 Download the MIMIC-III dataset via https://mimic.physionet.org/
